@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct myRecipeApp: App {
+    //@AppStorage("isDarkMode") private var isDarkMode = false
+    init(){
+        FirebaseApp.configure()
+    }
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LandingView()
+                //.preferredColorScheme(isDarkMode ? .dark : .light)
         }
     }
 }
