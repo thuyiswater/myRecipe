@@ -22,10 +22,10 @@ struct LandingView: View {
             VStack{
                 Spacer()
                 
-                Text("myRecipe")
-                    .font(.custom("Didot", size: 62))
-                    .foregroundColor(.black)
-                    .bold()
+                Image("logo-icon")
+                    .resizable()
+                    .frame(width: 400, height: 400)
+                    .padding(.top, 200)
                 
                 Spacer()
                 
