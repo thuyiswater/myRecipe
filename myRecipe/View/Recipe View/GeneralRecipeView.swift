@@ -14,9 +14,10 @@ struct GeneralRecipeView: View {
     var size: CGFloat
     @State private var image: UIImage = UIImage()
     @State private var username: String = ""
+    @State private var alignment = TextAlignment.leading
     
     var body: some View {
-        VStack(alignment: .leading){
+        VStack{
             Image(uiImage: image)
                 .resizable()
                 .scaledToFill()
@@ -24,14 +25,14 @@ struct GeneralRecipeView: View {
                 .cornerRadius(20)
                 .padding(.bottom, 10)
             
-            Text(recipe.name ?? "")
-                .foregroundColor(Color("ForegroundColor"))
-                .bold()
-                .frame(maxWidth: size)
-                .fixedSize(horizontal: false, vertical: true)
-                .multilineTextAlignment(.leading)
+                Text(recipe.name ?? "")
+                    .foregroundColor(Color("ForegroundColor"))
+                    .bold()
+                    .multilineTextAlignment(.leading)
+                    .frame(width: 200)
             
             Text(" by \(username)")
+                .frame(width: 200)
                 .foregroundColor(.secondary)
             
             Spacer()
@@ -66,7 +67,7 @@ struct GeneralRecipeView: View {
 struct GeneralRecipeView_Previews: PreviewProvider {
     static var previews: some View {
         GeneralRecipeView(recipe: Recipe(
-            name: Optional("test"),
+            name: Optional("Manchego and chorizo toasties"),
             image: Optional("images/960x1200-Cheats-Family-Ramen-13-copy-768x960.jpg"),
             makingTime: Optional(30),
             category: Optional("Dinner"),

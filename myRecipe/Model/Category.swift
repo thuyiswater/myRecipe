@@ -22,6 +22,6 @@ struct Category: Identifiable {
         Category(id: 2, name: (en: "Lunch", vi: "Bữa trưa"), image: "lunch"),
         Category(id: 3, name: (en: "Dinner", vi: "Bữa tối"), image: "dinner"),
         Category(id: 4, name: (en: "Dessert", vi: "Tráng miệng"), image: "dessert"),
-        Category(id: 5, name: (en: "Smoothies", vi: "Nước ép"), image: "smoothies")
+        Category(id: 5, name: (en: "Smoothies", vi: "Sinh tố"), image: "smoothies")
     ]
 }

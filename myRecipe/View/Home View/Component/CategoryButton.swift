@@ -17,10 +17,11 @@ struct CategoryButton: View {
     
     var body: some View {
         VStack {
+            
             VStack {
-                
                 Image(category.image)
-                
+                    .resizable()
+                    .frame(width: 50, height: 50)
                 
                 HStack{
                     Spacer()
