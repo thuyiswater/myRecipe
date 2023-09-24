@@ -139,9 +139,6 @@
 		43FA79CB2ABC0EC600A66190 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA79C52ABC0EC600A66190 /* User.swift */; };
 		43FA79CC2ABC0EC600A66190 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA79C52ABC0EC600A66190 /* User.swift */; };
 		43FA79CD2ABC0EC600A66190 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA79C52ABC0EC600A66190 /* User.swift */; };
-		43FA79CE2ABC0EC600A66190 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA79C62ABC0EC600A66190 /* Ingredient.swift */; };
-		43FA79CF2ABC0EC600A66190 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA79C62ABC0EC600A66190 /* Ingredient.swift */; };
-		43FA79D02ABC0EC600A66190 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA79C62ABC0EC600A66190 /* Ingredient.swift */; };
 		43FA79D12ABC0EC600A66190 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA79C72ABC0EC600A66190 /* Category.swift */; };
 		43FA79D22ABC0EC600A66190 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA79C72ABC0EC600A66190 /* Category.swift */; };
 		43FA79D32ABC0EC600A66190 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA79C72ABC0EC600A66190 /* Category.swift */; };
@@ -213,7 +210,6 @@
 		43FA79BC2ABC0E9B00A66190 /* RecipeModelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeModelView.swift; sourceTree = "<group>"; };
 		43FA79C42ABC0EC600A66190 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		43FA79C52ABC0EC600A66190 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		43FA79C62ABC0EC600A66190 /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		43FA79C72ABC0EC600A66190 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		43FA79D52ABC101E00A66190 /* BioAuthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BioAuthView.swift; sourceTree = "<group>"; };
 		43FA79D92ABC152700A66190 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -295,7 +291,6 @@
 			isa = PBXGroup;
 			children = (
 				43FA78D42ABC0BB700A66190 /* myRecipeApp.swift */,
-				43FA79D42ABC101E00A66190 /* BioAuth */,
 				43FA79C32ABC0EC600A66190 /* Model */,
 				43FA79BA2ABC0E9B00A66190 /* ModelView */,
 				43FA79392ABC0E7400A66190 /* View */,
@@ -334,6 +329,7 @@
 		43FA79392ABC0E7400A66190 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				43FA79D42ABC101E00A66190 /* BioAuth */,
 				43FA793A2ABC0E7400A66190 /* Home View */,
 				43FA79422ABC0E7400A66190 /* Favourite View */,
 				43FA79442ABC0E7400A66190 /* My Recipe View */,
@@ -477,7 +473,6 @@
 			children = (
 				43FA79C42ABC0EC600A66190 /* Recipe.swift */,
 				43FA79C52ABC0EC600A66190 /* User.swift */,
-				43FA79C62ABC0EC600A66190 /* Ingredient.swift */,
 				43FA79C72ABC0EC600A66190 /* Category.swift */,
 			);
 			path = Model;
@@ -675,7 +670,6 @@
 				43FA79632ABC0E7400A66190 /* HomeView.swift in Sources */,
 				43FA79992ABC0E7400A66190 /* LandingView.swift in Sources */,
 				43FA79AE2ABC0E7400A66190 /* AddRecipeView.swift in Sources */,
-				43FA79CE2ABC0EC600A66190 /* Ingredient.swift in Sources */,
 				43FA796F2ABC0E7400A66190 /* CategoryButton.swift in Sources */,
 				43FA797E2ABC0E7400A66190 /* UserView.swift in Sources */,
 				43FA78D52ABC0BB700A66190 /* myRecipeApp.swift in Sources */,
@@ -702,7 +696,6 @@
 			files = (
 				43FA79852ABC0E7400A66190 /* ImagePicker.swift in Sources */,
 				43FA797F2ABC0E7400A66190 /* UserView.swift in Sources */,
-				43FA79CF2ABC0EC600A66190 /* Ingredient.swift in Sources */,
 				43FA797C2ABC0E7400A66190 /* MyRecipeView.swift in Sources */,
 				43FA798E2ABC0E7400A66190 /* GeneralRecipeView.swift in Sources */,
 				43FA79882ABC0E7400A66190 /* SettingView.swift in Sources */,
@@ -764,7 +757,6 @@
 				43FA78F22ABC0BB800A66190 /* myRecipeUITestsLaunchTests.swift in Sources */,
 				43FA799B2ABC0E7400A66190 /* LandingView.swift in Sources */,
 				43FA79B02ABC0E7400A66190 /* AddRecipeView.swift in Sources */,
-				43FA79D02ABC0EC600A66190 /* Ingredient.swift in Sources */,
 				43FA79712ABC0E7400A66190 /* CategoryButton.swift in Sources */,
 				43FA79802ABC0E7400A66190 /* UserView.swift in Sources */,
 				43FA78F02ABC0BB800A66190 /* myRecipeUITests.swift in Sources */,

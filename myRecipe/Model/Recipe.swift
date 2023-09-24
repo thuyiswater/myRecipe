@@ -13,7 +13,10 @@
 import Foundation
 
 struct Recipe: Identifiable, Codable{
+    // Unique identifier for the recipe
     var id: String = UUID().uuidString
+    
+    // Recipe properties
     var name: String?
     var image: String?
     var makingTime: Int?
@@ -25,12 +28,14 @@ struct Recipe: Identifiable, Codable{
     var userDocumentID: String
     var documentID: String?
     
+    // Method to retrieve the user's full name from a list of users
     func getUserName(users: [User]) -> String {
         if let user = users.first(where: { $0.documentID == self.userDocumentID }) {
             let firstName = user.firstName ?? ""
             let lastName = user.lastName ?? ""
             return firstName + " " + lastName
         }
+        // Return a default message if the user is not found
         return "User not found"
     }
 

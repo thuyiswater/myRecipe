@@ -17,7 +17,7 @@ struct CategoryButton: View {
     
     var body: some View {
         VStack {
-            
+            // Container for category image and name.
             VStack {
                 Image(category.image)
                     .resizable()
@@ -29,7 +29,6 @@ struct CategoryButton: View {
                         .font(.system(size: 8))
                     Spacer()
                 }
-                
             }
             .padding()
             .background(
@@ -41,6 +40,7 @@ struct CategoryButton: View {
                     .stroke(Color.secondary)
             )
         }
+        // Set the width of the CategoryButton.
         .frame(width: width)
     }
 }

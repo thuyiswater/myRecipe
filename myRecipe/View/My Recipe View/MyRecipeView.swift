@@ -7,13 +7,27 @@
 
 import SwiftUI
 
+ 
+
 struct MyRecipeView: View {
     var user: User
     @ObservedObject var recipeViewModel: RecipeViewModel
     @ObservedObject var userViewModel: UserViewModel
     @State private var alertMessage: String = ""
     @State private var isShowingAlert: Bool = false
-    
+
+    var leftColumnRecipes: [Recipe] {
+        return recipeViewModel.getRecipeByUser(user: user).enumerated().compactMap { (index, recipe) in
+            return index % 2 == 0 ? recipe : nil
+        }
+    }
+
+    var rightColumnRecipes: [Recipe] {
+        return recipeViewModel.getRecipeByUser(user: user).enumerated().compactMap { (index, recipe) in
+            return index % 2 == 1 ? recipe : nil
+        }
+    }
+
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
@@ -22,33 +36,30 @@ struct MyRecipeView: View {
                         Text("My Recipe")
                             .font(.system(size: 26))
                             .bold()
-                        
+
                         Spacer()
                     }
                     .padding(.horizontal, 15)
-                    
+
                     HStack(alignment: .top, spacing: 5){
                         VStack(alignment: .leading){
                             Text("My Recipe")
                                 .padding(.bottom, 20)
                                 .opacity(0)
                             
-                            ForEach(0..<recipeViewModel.getRecipeByUser(user: user).count, id: \.self) { index in
-                                if index % 2 == 0 {
-                                    NavigationLink(destination: MyRecipeInfo(recipe: recipeViewModel.getRecipeByUser(user: user)[index], recipeViewModel: recipeViewModel, alertMessage: $alertMessage)) {
-                                        GeneralRecipeView(recipe: recipeViewModel.getRecipeByUser(user: user)[index], userViewModel: userViewModel, size: 150.0)
-                                    }
+                            ForEach(leftColumnRecipes) { recipe in
+                                NavigationLink(destination: MyRecipeInfo(recipe: recipe, recipeViewModel: recipeViewModel, alertMessage: $alertMessage)) {
+
+                                    GeneralRecipeView(recipe: recipe, userViewModel: userViewModel, size: 150.0)
                                 }
                             }
                         }
                         .frame(width: 180)
-                        
+
                         VStack {
-                            ForEach(0..<recipeViewModel.getRecipeByUser(user: user).count, id: \.self) { index in
-                                if index % 2 == 1 {
-                                    NavigationLink(destination: MyRecipeInfo(recipe: recipeViewModel.getRecipeByUser(user: user)[index], recipeViewModel: recipeViewModel, alertMessage: $alertMessage)) {
-                                        GeneralRecipeView(recipe: recipeViewModel.getRecipeByUser(user: user)[index], userViewModel: userViewModel, size: 150.0)
-                                    }
+                            ForEach(rightColumnRecipes) { recipe in
+                                NavigationLink(destination: MyRecipeInfo(recipe: recipe, recipeViewModel: recipeViewModel, alertMessage: $alertMessage)) {
+                                    GeneralRecipeView(recipe: recipe, userViewModel: userViewModel, size: 150.0)
                                 }
                             }
                         }
@@ -58,11 +69,14 @@ struct MyRecipeView: View {
                 .padding(.horizontal, 15)
             }
             .background(Color.gray.opacity(0.2))
+            // Handle alert presentation when alertMessage changes.
             .onChange(of: alertMessage) { newValue in
                 if newValue != "" {
                     isShowingAlert = true
                 }
             }
+            
+            // Present an alert when isShowingAlert is true.
             .alert(isPresented: $isShowingAlert) {
                 Alert(
                     title: Text("Delete Recipe"),
@@ -74,8 +88,14 @@ struct MyRecipeView: View {
     }
 }
 
+ 
+
 struct MyRecipeView_Previews: PreviewProvider {
+
     static var previews: some View {
+
         MyRecipeView(user: User(firstName: "", email: "", favourite: []), recipeViewModel: RecipeViewModel(),userViewModel: UserViewModel())
+
     }
+
 }

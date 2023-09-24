@@ -45,20 +45,17 @@ struct AddRecipeView: View {
             VStack{
                 HStack {
                     Button {
-                        
                     } label: {
                         Image(systemName: "xmark")
                             .font(.system(size: 28))
                             .bold()
                             .opacity(0)
                     }
-
                     Spacer()
 
                     Text("New Recipe")
                         .font(.system(size: 32))
                         .padding(.top, 20)
-
                     Spacer()
 
                     Button {
@@ -79,7 +76,6 @@ struct AddRecipeView: View {
                             Text("Recipe Name")
                                 .font(.system(size: 20))
                                 .foregroundColor(.secondary)
-                            // TextField("", text: recipe.name == nil ? recipe.name : "" )
                             
                             TextField("Recipe Name", text: $recipeName)
                                 .padding()

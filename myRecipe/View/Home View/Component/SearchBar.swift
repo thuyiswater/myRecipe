@@ -22,6 +22,7 @@ struct SearchBar: View {
 
     var body: some View {
         HStack {
+            // Magnifying glass icon for search.
             Image(systemName: "magnifyingglass")
                 .foregroundColor(Color("ForegroundColor"))
                 .font(.system(size: 18))
@@ -39,6 +40,7 @@ struct SearchBar: View {
             
             Text("|")
             
+            // Button to show the filter view.
             Button {
                 isShowingFilter = true
             } label: {
@@ -51,6 +53,7 @@ struct SearchBar: View {
         .padding(.horizontal, 16)
         .background(RoundedRectangle(cornerRadius: 30).fill(Color("BackgroundColor")))
         .sheet(isPresented: $isShowingFilter) {
+            // Present the filter view as a sheet.
             FilterView(minTimeMaking: $minTimeMaking, maxTimeMaking: $maxTimeMaking, category: $category)
                 .presentationDetents([.medium])
         }

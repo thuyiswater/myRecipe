@@ -27,9 +27,9 @@ struct UpdateRecipeView: View {
     var body: some View {
         ZStack {
             VStack{
+                // Header with title and close button.
                 HStack {
                     Button {
-                        
                     } label: {
                         Image(systemName: "xmark")
                             .font(.system(size: 28))
@@ -58,6 +58,7 @@ struct UpdateRecipeView: View {
                 .padding(.bottom,20)
                 
                 ScrollView(.vertical, showsIndicators: false) {
+                    // Form fields for updating recipe details.
                     VStack(spacing: 15){
                         VStack(alignment: .leading, spacing: 10){
                             Text("Recipe Name")
@@ -207,6 +208,7 @@ struct UpdateRecipeView: View {
                     }
                 )
             }
+            // Initialize form fields with the existing recipe data.
             .onAppear{
                 recipeName = recipe.name ?? ""
                 description = recipe.description ?? ""

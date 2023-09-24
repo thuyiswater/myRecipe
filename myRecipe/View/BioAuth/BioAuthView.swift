@@ -23,13 +23,17 @@ struct BioAuthView: View {
         }
     }
     
+    // Function to perform biometric authentication
     func authenticate() {
         let context = LAContext()
         var error: NSError?
         
+        // Check if the device supports biometric authentication
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+            // Attempt biometric authentication
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "This is security reason") { success, authenticationError in
                 
+                // Check if authentication was successful
                 if success {
                     text = "UNCLOCKED"
                 }

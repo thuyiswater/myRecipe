@@ -21,10 +21,12 @@ struct RangeSlider: View {
     var totalWidth = UIScreen.main.bounds.width - 70
     var body: some View {
         VStack {
-            
+            // Display the selected time range in hours and minutes.
             Text("\(minTimeMaking/60)h \(minTimeMaking%60)m - \(maxTimeMaking/60)h \(maxTimeMaking%60)m")
                 .fontWeight(.bold)
                 .padding(.top)
+            
+            // Create a range slider with a draggable thumb.
             ZStack(alignment: .leading) {
                 Rectangle()
                     .fill(Color.black.opacity(0.2))
@@ -35,6 +37,7 @@ struct RangeSlider: View {
                     .offset(x: self.width + 18)
                 
                 HStack(spacing: 0) {
+                    // Left thumb for selecting the minimum time.
                     Circle()
                         .fill(Color.green)
                         .frame(width: 18, height: 18)
@@ -50,6 +53,7 @@ struct RangeSlider: View {
                                 })
                         )
                     
+                    // Right thumb for selecting the maximum time.
                     Circle()
                         .fill(Color.green)
                         .frame(width: 18, height: 18)
@@ -68,6 +72,7 @@ struct RangeSlider: View {
             }
         }.padding()
         .onAppear() {
+            // Initialize the width of the thumbs based on the current time range.
             width = CGFloat(Double(minTimeMaking)/200)*self.totalWidth
             width1 = CGFloat(Double(maxTimeMaking)/200)*self.totalWidth
         }

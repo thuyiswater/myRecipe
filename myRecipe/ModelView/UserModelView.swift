@@ -65,7 +65,7 @@ class UserViewModel: ObservableObject {
             "email": email, // Use the provided email
             "phone": "",
             "address": "",
-            "favourite": [],
+            "favourite": [""],
             "avatar": ""
         ])
     }

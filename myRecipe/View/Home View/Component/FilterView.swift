@@ -22,8 +22,8 @@ struct FilterView: View {
     var body: some View {
         VStack{
             HStack {
+                // Placeholder action or functionality for the "xmark" button
                 Button {
-                    
                 } label: {
                     Image(systemName: "xmark")
                         .font(.system(size: 28))
