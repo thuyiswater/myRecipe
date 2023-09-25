@@ -88,12 +88,8 @@ struct MyRecipeView: View {
     }
 }
 
- 
-
 struct MyRecipeView_Previews: PreviewProvider {
-
     static var previews: some View {
-
         MyRecipeView(user: User(firstName: "", email: "", favourite: []), recipeViewModel: RecipeViewModel(),userViewModel: UserViewModel())
 
     }
