@@ -13,7 +13,7 @@ struct RecipeList: View {
     @ObservedObject var recipeViewModel: RecipeViewModel
     @ObservedObject var userViewModel: UserViewModel
     @State private var minMakingTime: Int = 0
-    @State private var maxMakingTime: Int = 1800
+    @State private var maxMakingTime: Int = 180
     @State private var category: String = "None"
     @Binding var viewedRecipes: [Recipe]
     @Binding var user: User
