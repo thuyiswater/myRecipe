@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct FavouriteView: View {
-
     @Binding var user: User
     @ObservedObject var recipeViewModel: RecipeViewModel
     @ObservedObject var userViewModel: UserViewModel
@@ -28,8 +27,6 @@ struct FavouriteView: View {
             return index % 2 == 1 ? recipe : nil
         }
     }
-
-    
 
     var body: some View {
         NavigationView {
